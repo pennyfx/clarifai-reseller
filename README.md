@@ -1,4 +1,4 @@
-# Clarifai payable micro service example
+# 21.co payable proxy micro service example
 
 This is a working prototype that shows how to wrap an existing API and sell those services for micro payments.
 
