@@ -1,0 +1,31 @@
+version: '2'
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  clarify:
+    image: pennyfx/clarifai
+    container_name: clarify
+    environment:
+      - "CLIENT_ID=YOUR KEY"
+      - "CLIENT_SECRET=YOUR SECRET"
+
+  two1proxy:
+    image: pennyfx/21-payable-proxy
+    container_name: two1proxy
+    environment:
+      - "VIRTUAL_HOST=YOUR DOMAIN"
+    ports:
+      - "8928:5000"
+    volumes:
+      - ~/clarifai-reseller/:/config/
+      - ~/.two1/:/root/.two1/
+    links:
+      - clarify:clarify
+    depends_on:
+      - clarify
