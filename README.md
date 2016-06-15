@@ -37,6 +37,12 @@ docker-compose up -d
 
 You can run this from your home computer if you like.  I used AWS since they have a free tier.
 
+## Proxy and service wrapper repos
+
+https://github.com/pennyfx/21-payable-proxy
+
+https://github.com/pennyfx/clarifai-docker-wrapper
+
 ## Easy config
 
 config.yaml allows you to easily add more services, rename routes or change fees.  One could potentially have many different services behind this one proxy.
