@@ -9,7 +9,7 @@ Requirements:
   - docker and docker-compose
   - 21.co software, and initialized wallet
 
-Checkout the docker compose file.
+Checkout the docker compose file to see how it works.
 
 ## Setup
 
